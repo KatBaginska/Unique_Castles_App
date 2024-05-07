@@ -1,6 +1,10 @@
 class CastlesController < ApplicationController
   def index
-    @castle.all
+    @castles = Castle.all
+  end
+
+  def show
+    @castle = Castle.find(params[:id])
   end
 
   def new

@@ -3,7 +3,7 @@ class CreateCastles < ActiveRecord::Migration[7.1]
     create_table :castles do |t|
       t.string :title
       t.text :description
-      t.decimal :price
+      t.float :price
       t.string :location
       t.references :user, null: false, foreign_key: true
 

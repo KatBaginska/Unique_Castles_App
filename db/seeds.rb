@@ -7,8 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+User.destroy_all
+Castle.destroy_all
 
-Castle.create(title: "Castle Neuschwanstein", description: "Fairy tale castle to live out your dreams", price: 30, location:"Bavaria")
-Castle.create(title: "Castle Paris", description: "Cozy, parisian countryside estate ", price: 50, location: "Paris")
-Castle.create(title: "Castle Andalucia", description: "Spanish rustic castle", price: 60, location: "Andalucia")
-Castle.create(title: "Castle Highlands", description: "Enjoy some haggis in a warm castle in the highlands", price: 70, location: "Scottish Highlands")
+user = User.create(username: "user101", email: "user@gmail.com", password: "password")
+
+Castle.create(title: "Castle Neuschwanstein", description: "Fairy tale castle to live out your dreams", price: 30, location: "Bavaria", user_id: user.id)
+Castle.create(title: "Castle Paris", description: "Cozy, parisian countryside estate ", price: 50, location: "Paris", user_id: user.id)
+Castle.create(title: "Castle Andalucia", description: "Spanish rustic castle", price: 60, location: "Andalucia", user_id: user.id)
+Castle.create(title: "Castle Highlands", description: "Enjoy some haggis in a warm castle in the highlands", price: 70, location: "Scottish Highlands", user_id: user.id)

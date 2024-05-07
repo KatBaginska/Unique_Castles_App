@@ -9,8 +9,8 @@
 #   end
 
 
+User.destroy_all
 Castle.destroy_all
-
 
 user = User.create(username: "user101", email: "user@gmail.com", password: "password")
 

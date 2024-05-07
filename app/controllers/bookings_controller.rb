@@ -4,11 +4,11 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find([params[:booking_id]])
+    @booking = Booking.find(params[:booking_id])
   end
 
   def new
-    @castle = Castle.find([params[:castle_id]])
+    @castle = Castle.find(params[:castle_id])
     @booking = @castle.bookings.new
   end
 

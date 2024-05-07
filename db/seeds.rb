@@ -7,10 +7,28 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
 
-Castle.destroy_all
-user = User.create(username: "user101", email: "user@gmail.com", password: "password")
-Castle.create(title: "Castle Neuschwanstein", description: "Fairy tale castle to live out your dreams", price: 50 , location: "Bavaria", user: user)
-Castle.create(title: "Castle Paris", description: "Cozy, parisian countryside estate ", price: 50, location: "Paris", user: user)
-Castle.create(title: "Castle Andalucia", description: "Spanish rustic castle", price: 60, location: "Andalucia", user: user)
-Castle.create(title: "Castle Highlands", description: "Enjoy some haggis in a warm castle in the highlands", price: 70, location: "Scottish Highlands", user: user)
+5.times do
+  user = User.create!(
+    username: Faker::Internet.unique.username(specifier: 5..8),
+    email: Faker::Internet.unique.email,
+    password: Faker::Internet.password(min_length: 8)
+  )
+  puts "User '#{user.username}' created!"
+end
+
+# Create castles
+User.all.each do |user|
+  3.times do
+    castle = Castle.create!(
+      title: Faker::Book.title,
+      description: Faker::Lorem.sentence,
+      price: Faker::Number.between(from: 50, to: 200),
+      location: Faker::Fantasy::Tolkien.location,
+      user: user
+    )
+    puts "Castle '#{castle.title}' created!"
+  end
+end
+

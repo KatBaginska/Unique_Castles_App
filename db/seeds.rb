@@ -9,6 +9,8 @@
 #   end
 
 Castle.destroy_all
+User.destroy_all
+
 user = User.create(username: "user101", email: "user@gmail.com", password: "password")
 Castle.create(title: "Castle Neuschwanstein", description: "Fairy tale castle to live out your dreams", price: 50 , location: "Bavaria", user: user)
 Castle.create(title: "Castle Paris", description: "Cozy, parisian countryside estate ", price: 50, location: "Paris", user: user)

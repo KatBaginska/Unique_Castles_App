@@ -1,0 +1,13 @@
+<h1>Castles</h1>
+
+<ul>
+  <% @castles.each do |castle| %>
+    <li>
+      <h2><%= castle.title %></h2>
+      <p><%= castle.description %></p>
+      <p>Price: <%= number_to_currency(castle.price) %></p>
+      <p>Location: <%= castle.location %></p>
+      <p>User: <%= castle.user %></p>
+    </li>
+  <% end %>
+</ul>

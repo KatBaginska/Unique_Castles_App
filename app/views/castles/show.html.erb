@@ -1,18 +1,14 @@
 <div class="container mt-10">
-<h1><%= @castle.name %></h1>
+<h1><%= @castle.title %></h1>
 
-<%= link_to "Back to castles", castles_path, class: "btn btn-flat" %>
+<%= link_to "Back to castles", castles_path %>
 
-<div class="cards">
-  <% @castle.each do |castle| %>
-  <div class="castle-card">
-    <!--<%= image_tag castle.photo, alt: castle.title %>-->
-    <div class="castle-details">
-      <p><strong><%= castle.title %></strong></p>
-      <p><%= castle.description %></p>
+<div>
+      <p><strong><%= @castle.title %></strong></p>
+      <p><%= @castle.description %></p>
+      <p>Price: <%= number_to_currency(@castle.price) %></p>
+      <p>Location: <%= @castle.location %></p>
+      <p>User: <%= @castle.user.username %></p>
     </div>
-    <p><%= link_to "Delete castle", castle_path(castle), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-flat" %></p>
-  </div>
-  <% end %>
-</div>
+    <p><%= link_to "Delete castle", castle_path(@castle), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%></p>
 </div>

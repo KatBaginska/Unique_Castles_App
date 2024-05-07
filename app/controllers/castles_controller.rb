@@ -1,6 +1,10 @@
 class CastlesController < ApplicationController
+  def index
+    @castle.all
+  end
+
   def new
-    @offer = Offer.new
+    @castle = Castle.new
   end
 
   def create

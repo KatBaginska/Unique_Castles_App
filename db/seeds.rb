@@ -9,6 +9,11 @@
 #   end
 require 'faker'
 
+Booking.destroy_all
+Castle.destroy_all
+User.destroy_all
+
+
 5.times do
   user = User.create!(
     username: Faker::Internet.unique.username(specifier: 5..8),
@@ -29,6 +34,18 @@ User.all.each do |user|
       user: user
     )
     puts "Castle '#{castle.title}' created!"
+
+    1.times do
+      start_date = Faker::Date.between(from: Date.today, to: Date.today + 30)
+      end_date = Faker::Date.between(from: start_date + 1, to: start_date + 60)
+
+      Booking.create(
+        castle: castle,
+        user: user,
+        start_date: start_date,
+        end_date: end_date,
+        confirmed: [true, false].sample
+      )
+    end
   end
 end
-

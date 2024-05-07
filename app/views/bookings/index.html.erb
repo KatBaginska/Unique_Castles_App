@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <h1>Bookings</h1>
+  <div class="cards">
+    <% @bookings.each do |booking| %>
+      <h2><%= booking.castle.title %></h2>
+      <p><%= booking.start_date %></p>
+      <p><%= booking.end_date %></p>
+      <p><%= booking.confirmed %></p>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to "Browse more castles", castles_path %>
+</div>

@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
 
   def new
     @castle = Castle.find(params[:castle_id])
-    @booking = @castle.bookings.new
+    @booking = Booking.new
   end
 
   def create

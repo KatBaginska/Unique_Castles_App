@@ -1,6 +1,6 @@
 <div class="container mt-10">
 <h1><%= @castle.title %></h1>
-  
+
 <%= link_to "Back to castles", castles_path %>
 
 <div>
@@ -10,5 +10,7 @@
       <p>Location: <%= @castle.location %></p>
       <p>User: <%= @castle.user.username %></p>
     </div>
+    <%= link_to "Book this castle",new_castle_booking_path(@castle) %>
+
     <p><%= link_to "Delete castle", castle_path(@castle), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%></p>
 </div>

@@ -12,10 +12,11 @@ class CastlesController < ApplicationController
   end
 
   def create
-    @castle = Castle.new(castle_params)
+    @castle = current_user.castles.new(castle_params)
     if @castle.save
       redirect_to castles_path
     else
+      puts @castle.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end

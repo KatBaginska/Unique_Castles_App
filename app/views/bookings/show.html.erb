@@ -1,13 +1,13 @@
 <div class="container mt-10">
-<h1><%= @booking.castle %></h1>
-
 <%= link_to "Back to bookings", bookings_path %>
+<h1><%= @booking.castle.title %></h1>
+
+
 
 <div class="card w-75">
-      <p><strong><%= @booking.castle %></strong></p>
-      <p>Start Date: <%= @booking.start_date %></p>
-      <p>End Date: <%= @booking.end_date %></p>
-      <p>User: <%= @booking.user %></p>
+      <p><strong>Start Date:</strong><%= @booking.start_date %></p>
+      <p><strong>End Date:</strong> <%= @booking.end_date %></p>
+      <p><strong>User:</strong> <%= @booking.user.first_name %></p>
     </div>
-    <%# <p><%= link_to "Delete castle", castle_path(@castle), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%>
+    <p><%= link_to "Delete booking", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%>
 </div>

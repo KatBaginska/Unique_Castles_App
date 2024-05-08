@@ -3,10 +3,10 @@
 
 <%= link_to "Back to castles", castles_path %>
   <div>
-    <% if @castle.photo.attached? %>
-      <%= cl_image_tag @castle.photo.key, height: 300, width: 400, crop: :fill %>
+    <% if @castle.photo.present? %>
+      <%= cl_image_tag @castle.photo.key, cloud_name: "clouinary", class: "castle-image" %>
     <% else %>
-      <%= <p>No photo available</p> %>
+      <p>No photo available</p>
      <% end %>
     <p><strong><%= @castle.title %></strong></p>
     <p><%= @castle.description %></p>
@@ -17,4 +17,3 @@
   <%= link_to "Book this castle", new_castle_booking_path(@castle), class: "btn btn-primary" %>
 </div>
 <!--added cloudinary stuff-->
-

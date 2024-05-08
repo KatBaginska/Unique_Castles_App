@@ -30,9 +30,9 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     if @booking.user == current_user
       @booking.destroy
-      redirect_to booking_path, notice: 'Castle was successfully destroyed.'
+      redirect_to bookings_path, notice: 'Castle was successfully destroyed.'
     else
-      alert: 'You are not authorized to delete this castle.'
+      redirect_to booking_path, alert: 'You are not authorized to delete this castle.'
     end
   end
 

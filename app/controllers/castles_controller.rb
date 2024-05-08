@@ -7,6 +7,10 @@ class CastlesController < ApplicationController
     @castle = Castle.find(params[:id])
   end
 
+  def my_castles
+    @castles = current_user.castles
+  end
+
   def new
     @castle = Castle.new
   end

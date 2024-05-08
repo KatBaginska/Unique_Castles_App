@@ -1,5 +1,5 @@
 <div class="container mt-10">
-<h1><%= @castle.title %></h1>
+  <h1><%= @castle.title %></h1>
 
 <%= link_to "Back to castles", castles_path %>
   <div>
@@ -13,12 +13,8 @@
     <p>Price: <%= number_to_currency(@castle.price) %></p>
     <p>Location: <%= @castle.location %></p>
     <p>User: <%= @castle.user.username %></p>
-     <% if current_user == @castle.user %>  <!-- Assuming `user` is the associated model with castle -->
-        <%= link_to 'Delete Castle', castle_path(@castle), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-      <% end %>
   </div>
-  <%= link_to "Book this castle",new_castle_booking_path(@castle) %>
-
-    <p><%= link_to "Edit castle", edit_castle_path(@castle), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%></p>
+  <%= link_to "Book this castle", new_castle_booking_path(@castle), class: "btn btn-primary" %>
 </div>
 <!--added cloudinary stuff-->
+

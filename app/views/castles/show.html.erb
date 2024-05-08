@@ -9,14 +9,12 @@
     <% else %>
       <p class="no-photo">No photo available</p>
     <% end %>
-
     <p><strong><%= @castle.title %></strong></p>
     <p><%= @castle.description %></p>
     <p>Price: <%= number_to_currency(@castle.price) %></p>
     <p>Location: <%= @castle.location %></p>
     <p>User: <%= @castle.user.username %></p>
   </div>
-
   <%= link_to "Book this castle", new_castle_booking_path(@castle), class: "btn btn-primary" %>
 </div>
 

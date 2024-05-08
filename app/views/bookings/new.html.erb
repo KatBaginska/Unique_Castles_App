@@ -1,10 +1,16 @@
-<div class="container mt-5">
-<h1>Create castle listing</h1>
-<%= simple_form_for(@castle) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.submit %>
+<h1>New Booking</h1>
+
+<%= form_for @booking, url: castle_bookings_path(@castle) do |f| %>
+<%= f.hidden_field :castle_id, value: @castle.id %>
+  <div>
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date %>
+  </div>
+
+  <div>
+    <%= f.label :end_date %>
+    <%= f.date_field :end_date %>
+  </div>
+
+  <%= f.submit "Create" %>
 <% end %>
-</div>

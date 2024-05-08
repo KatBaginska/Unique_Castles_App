@@ -1,13 +1,18 @@
-<div class="container mt-5">
-  <h1>Bookings</h1>
-  <div class="cards">
+ <h1 class="">Bookings</h1>
+  <div class="row">
     <% @bookings.each do |booking| %>
-      <h2><%= booking.castle.title %></h2>
-      <p><%= booking.start_date %></p>
-      <p><%= booking.end_date %></p>
-      <p><%= booking.confirmed %></p>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow p-3 mb-5 bg-body rounded">
+          <div class="card-body">
+            <img src="<%= booking.castle.image_url %>" class="card-img-top" alt="Castle Image">
+            <h4 class="card-title text-#fd7e14 "><%= booking.castle.title %></h4>
+            <p class="card-text"><strong>Start Date:</strong><%= booking.start_date %></p>
+            <p class="card-text"><strong>End Date:</strong><%= booking.end_date %></p>
+            <p class="card-text"><strong>Dose host confrimed your booking?</strong><%= booking.confirmed %></p>
+            <a href="<%= edit_booking_path(booking) %>" class="btn btn-primary">Edit</a>
+          </div>
+        </div>
     </div>
     <% end %>
   </div>
   <%= link_to "Browse more castles", castles_path %>
-</div>

@@ -5,6 +5,8 @@
   <%= f.input :price %>
   <%= f.input :description %>
   <%= f.input :location %>
-  <%= f.submit %>
+  <%= f.label "Profile Photo" %>
+  <%= f.file_field :avatar %><br>
+  <%= f.submit "Create" %>
 <% end %>
 </div>

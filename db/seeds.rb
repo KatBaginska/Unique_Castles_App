@@ -31,6 +31,7 @@ User.all.each do |user|
       description: Faker::Lorem.sentence,
       price: Faker::Number.between(from: 50, to: 200),
       location: Faker::Fantasy::Tolkien.location,
+      image_url: Faker::LoremFlickr.image(size: "300x200"),
       user: user
     )
     puts "Castle '#{castle.title}' created!"

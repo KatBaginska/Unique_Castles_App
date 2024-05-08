@@ -1,21 +1,22 @@
 <div class="container mt-10">
-<h1><%= @castle.title %></h1>
+  <h1><%= @castle.title %></h1>
 
-<%= link_to "Back to castles", castles_path %>
-  <div>
+  <%= link_to "Back to castles", castles_path %>
+
+  <div class="castle-details">
     <% if @castle.avatar.attached? %>
-      <%= image_tag @castle.avatar %>
+      <%= image_tag @castle.avatar, class: "castle-image" %>
     <% else %>
-      <p>No photo available</p>
+      <p class="no-photo">No photo available</p>
     <% end %>
+
     <p><strong><%= @castle.title %></strong></p>
     <p><%= @castle.description %></p>
     <p>Price: <%= number_to_currency(@castle.price) %></p>
     <p>Location: <%= @castle.location %></p>
     <p>User: <%= @castle.user.username %></p>
-     <% if current_user == @castle.user %>  <!-- Assuming `user` is the associated model with castle -->
-        <%= link_to "Edit castle", edit_castle_path(@castle), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-      <% end %>
   </div>
-  <%= link_to "Book this castle",new_castle_booking_path(@castle) %>
+
+  <%= link_to "Book this castle", new_castle_booking_path(@castle), class: "btn btn-primary" %>
 </div>
+

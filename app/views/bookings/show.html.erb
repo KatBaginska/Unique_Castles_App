@@ -5,9 +5,12 @@
 
 
 <div class="card w-75">
+ <img src="<%= @booking.castle.image_url %>" class="card-img-top" alt="Castle Image">
       <p><strong>Start Date:</strong><%= @booking.start_date %></p>
       <p><strong>End Date:</strong> <%= @booking.end_date %></p>
       <p><strong>User:</strong> <%= @booking.user.first_name %></p>
+      <p><strong>Total Nights:</strong> <%= @booking.total_nights%></p>
+      <p><strong>Total Price:</strong> <%= number_to_currency(@booking.total_price)%>
     </div>
     <p><%= link_to "Delete booking", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%>
 </div>

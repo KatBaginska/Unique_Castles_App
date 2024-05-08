@@ -4,8 +4,8 @@
   <%= link_to "Back to castles", castles_path %>
 
   <div class="castle-details">
-    <% if @castle.avatar.attached? %>
-      <%= image_tag @castle.avatar, class: "castle-image" %>
+    <% if @castle.photo.attached? %>
+      <%= cl_image_tag @castle.photo.key, class: "castle-image" %>
     <% else %>
       <p class="no-photo">No photo available</p>
     <% end %>
@@ -17,4 +17,3 @@
   </div>
   <%= link_to "Book this castle", new_castle_booking_path(@castle), class: "btn btn-primary" %>
 </div>
-

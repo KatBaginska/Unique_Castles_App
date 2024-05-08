@@ -16,9 +16,10 @@ class CastlesController < ApplicationController
   end
 
   def create
-    @castle = current_user.castles.new(castle_params)
+    @castle = Castle.new(castle_params)
+    @castle.user = current_user
     if @castle.save
-      redirect_to castles_path
+      redirect_to castle_path(@castle)
     else
       puts @castle.errors.full_messages
       render :new, status: :unprocessable_entity
@@ -41,6 +42,6 @@ class CastlesController < ApplicationController
   private
 
   def castle_params
-    params.require(:castle).permit(:title, :description, :price, :location, :avatar)
+    params.require(:castle).permit(:title, :description, :price, :location, :photo)
   end
 end

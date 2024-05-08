@@ -19,5 +19,5 @@
   </div>
   <%= link_to "Book this castle",new_castle_booking_path(@castle) %>
 
-    <p><%= link_to "Edit castle", edit_castle_path(castle), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%></p>
+    <p><%= link_to "Edit castle", edit_castle_path(@castle), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%></p>
 </div>

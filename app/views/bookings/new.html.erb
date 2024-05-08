@@ -1,5 +1,6 @@
-<h1>New Booking</h1>
 
+<div class="container mt-5">
+<h1>New Booking</h1>
 <%= form_for @booking, url: castle_bookings_path(@castle) do |f| %>
   <%= f.hidden_field :castle_id, value: @castle.id %>
 
@@ -17,3 +18,4 @@
     <%= f.submit "Create" %>
   </div>
 <% end %>
+</div>

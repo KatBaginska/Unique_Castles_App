@@ -21,13 +21,16 @@ class CastlesController < ApplicationController
     end
   end
 
-  def destroy
+  def edit
     @castle = Castle.find(params[:id])
-    if @castle.user == current_user
-      @castle.destroy
-      redirect_to castles_path, notice: 'Castle was successfully destroyed.'
+  end
+
+  def update
+    @castle = Castle.find(params[:id])
+    if @castle.update(booking_params)
+      redirect_to @castle, notice: 'Updated Succesfully!'
     else
-      redirect_to castles_path, alert: 'You are not authorized to delete this castle.'
+      render :edit
     end
   end
 

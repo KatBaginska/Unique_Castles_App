@@ -26,22 +26,14 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit
+  def destroy
     @booking = Booking.find(params[:id])
-  end
-
-  def update
-    @booking = Booking.find(params[:id])
-    if @booking.update(booking_params)
-      redirect_to @booking, notice: 'Updated Succesfully!'
+    if @booking.user == current_user
+      @booking.destroy
+      redirect_to booking_path, notice: 'Castle was successfully destroyed.'
     else
-      render :edit
+      alert: 'You are not authorized to delete this castle.'
     end
-  end
-
-  def delete
-    @booking = Booking.find(params[:id])
-    @booking.destroy
   end
 
   private

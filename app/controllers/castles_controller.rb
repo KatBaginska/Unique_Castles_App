@@ -21,6 +21,16 @@ class CastlesController < ApplicationController
     end
   end
 
+  def destroy
+    @castle = Castle.find(params[:id])
+    if @castle.user == current_user
+      @castle.destroy
+      redirect_to castles_path, notice: 'Castle was successfully destroyed.'
+    else
+      redirect_to castles_path, alert: 'You are not authorized to delete this castle.'
+    end
+  end
+
   private
 
   def castle_params

@@ -4,7 +4,7 @@
 <%= link_to "Back to castles", castles_path %>
   <div>
     <% if @castle.photo.present? %>
-      <%= cl_image_tag @castle.photo.key, cloud_name: "clouinary", class: "castle-image" %>
+      <%= cl_image_tag @castle.photo.key, class: "castle-image" %>
     <% else %>
       <p>No photo available</p>
      <% end %>

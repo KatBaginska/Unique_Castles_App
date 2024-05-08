@@ -18,7 +18,6 @@ class CastlesController < ApplicationController
   def create
     @castle = Castle.new(castle_params)
     @castle.user = current_user
-
     if @castle.save
       redirect_to castle_path(@castle)
     else

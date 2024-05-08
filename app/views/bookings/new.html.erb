@@ -1,16 +1,19 @@
 <h1>New Booking</h1>
 
 <%= form_for @booking, url: castle_bookings_path(@castle) do |f| %>
-<%= f.hidden_field :castle_id, value: @castle.id %>
-  <div>
+  <%= f.hidden_field :castle_id, value: @castle.id %>
+
+  <div class="field">
     <%= f.label :start_date %>
     <%= f.date_field :start_date %>
   </div>
 
-  <div>
+  <div class="field">
     <%= f.label :end_date %>
     <%= f.date_field :end_date %>
   </div>
 
-  <%= f.submit "Create" %>
+  <div class="actions">
+    <%= f.submit "Create" %>
+  </div>
 <% end %>

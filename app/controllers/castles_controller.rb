@@ -32,7 +32,7 @@ class CastlesController < ApplicationController
 
   def update
     @castle = Castle.find(params[:id])
-    if @castle.update(booking_params)
+    if @castle.update(castle_params)
       redirect_to @castle, notice: 'Updated Succesfully!'
     else
       render :edit

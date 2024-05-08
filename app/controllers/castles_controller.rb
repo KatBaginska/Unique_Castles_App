@@ -24,6 +24,6 @@ class CastlesController < ApplicationController
   private
 
   def castle_params
-    params.require(:castle).permit(:title, :description, :price, :location)
+    params.require(:castle).permit(:title, :description, :price, :location, :avatar)
   end
 end

@@ -3,14 +3,19 @@
 
 <%= link_to "Back to castles", castles_path %>
 
-<div>
-      <p><strong><%= @castle.title %></strong></p>
-      <p><%= @castle.description %></p>
-      <p>Price: <%= number_to_currency(@castle.price) %></p>
-      <p>Location: <%= @castle.location %></p>
-      <p>User: <%= @castle.user.username %></p>
-    </div>
-    <%= link_to "Book this castle",new_castle_booking_path(@castle) %>
+  <div>
+    <% if @castle.avatar.attached? %>
+      <%= image_tag @castle.avatar %>
+    <% else %>
+      <p>No photo available</p>
+    <% end %>
+    <p><strong><%= @castle.title %></strong></p>
+    <p><%= @castle.description %></p>
+    <p>Price: <%= number_to_currency(@castle.price) %></p>
+    <p>Location: <%= @castle.location %></p>
+    <p>User: <%= @castle.user.username %></p>
+  </div>
+  <%= link_to "Book this castle",new_castle_booking_path(@castle) %>
 
     <p><%= link_to "Delete castle", castle_path(@castle), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%></p>
 </div>

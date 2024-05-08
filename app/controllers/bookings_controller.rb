@@ -39,6 +39,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def delete
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+  end
+
   private
 
   def booking_params

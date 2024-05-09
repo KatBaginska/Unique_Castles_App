@@ -6,14 +6,54 @@
 @import "cards";
 @import "footer";
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .banner {
   margin-left: 30px;
   margin-right: 30px;
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 600px;
+  width: calc(100% - 60px);
+  height: 500px;
   padding: 0;
   margin-bottom: 50px;
+  overscroll-behavior: hidden;
+  justify-content: center;
+}
+
+.elite {
+  font-family: "League Spartan", sans-serif;
+  color: #fff;
+  background-color: #222;
+  border: .1em solid #222;
+  padding: .5em 2em;
+  border-radius: 5px;
+  transition: all .5s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-left: 400px;
+}
+
+.elite:hover {
+  letter-spacing: 3px;
+  color: #222;
+  background: #fff;
+}
+
+.castle-recomend{
+  margin-left: 30px;
+}
+
+.cards-castle{
+  margin-left:30px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

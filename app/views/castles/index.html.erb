@@ -1,21 +1,21 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(./img/castle_banner.png);">
+<div class="banner" style="background-image: url(./img/castle_banner2.png);">
   <div class="container">
     <!--<a class="btn btn-flat" href="#">Apply now</a>-->
   </div>
 </div>
 
-<div class="container mt-5">
-  <h1>Castles</h1>
+<div class="cards-castles">
+  <h1 class="castle-recomend">Recomended Castles</h1>
   <div class="cards">
     <% @castles.each do |castle| %>
     <div class="castle-card">
       <%= cl_image_tag castle.photo.key, class: "castle-image" %>
       <h2><%= link_to castle.title, castle_path(castle) %></h2>
-      <p><%= castle.description %></p>
-      <p>Location: <%= castle.location %></p>
+      <p><strong>Price:</strong> £<%= castle.price %></p>
+      <p><strong>Location:</strong> <%= castle.location %></p>
     </div>
     <% end %>
   </div>
   <br>
-  <%= link_to "Add new castle", new_castle_path, class: "btn btn-primary" %>
+  <%= link_to "Add new castle", new_castle_path, class: "elite" %>
 </div>

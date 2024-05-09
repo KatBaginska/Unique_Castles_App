@@ -1,18 +1,30 @@
-<div class="container mt-10">
+<div class="container mt-5">
   <h1><%= @castle.title %></h1>
 
-  <%= link_to "Back to castles", castles_path %>
-  <div>
-    <% if @castle.photo.present? %>
-      <%= cl_image_tag @castle.photo.key, class: "castle-image" %>
+<%= link_to "Back to castles", castles_path %>
+  <div class="castle-details-card">
+    <% if @castle.photos.present? %>
+      <div class="image-container">
+        <div class="main-image">
+          <%= cl_image_tag @castle.photos[0].key, height: 400, crop: :fill, class: "hero" %>
+        </div>
+        <div class="gallery">
+          <% unless @castle.photos.count == 1 %>
+            <% @castle.photos.each_with_index do |photo, index| %>
+              <% next if index == 0 %>
+              <%= cl_image_tag photo.key, height: 196, width: 250, crop: :fill %>
+            <% end %>
+          <% end %>
     <% else %>
       <%= "No photo available" %>
-     <% end %>
-    <p><strong><%= @castle.title %></strong></p>
+    <% end %>
+        </div>
+     </div>
+     <div class="details">
     <p><%= @castle.description %></p>
-    <p>Price: <%= number_to_currency(@castle.price) %></p>
+    <p>Price: <%= "£#{(@castle.price)}/per night" %></p>
     <p>Location: <%= @castle.location %></p>
-    <p>User: <%= @castle.user.username %></p>
+    <p>Hosted by <%= "#{@castle.user.username} - experienced host" %></p>
   </div>
   <%= link_to "Book this castle", new_castle_booking_path(@castle), class: "btn btn-primary" %>
   <br>
@@ -22,4 +34,5 @@
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+</div>
 </div>

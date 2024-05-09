@@ -1,6 +1,6 @@
 class Castle < ApplicationRecord
   belongs_to :user
-  has_one_attached :photo
+  has_many_attached :photos
 
   validates :title, :price, :location, presence: true
   validates :description, length: { minimum: 6 }

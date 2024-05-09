@@ -7,6 +7,10 @@ class CastlesController < ApplicationController
     @castle = Castle.find(params[:id])
   end
 
+  def my_castles
+    @castles = current_user.castles
+  end
+
   def new
     @castle = Castle.new
   end
@@ -28,7 +32,7 @@ class CastlesController < ApplicationController
 
   def update
     @castle = Castle.find(params[:id])
-    if @castle.update(booking_params)
+    if @castle.update(castle_params)
       redirect_to @castle, notice: 'Updated Succesfully!'
     else
       render :edit

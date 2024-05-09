@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhc3RsZXxlbnwwfHwwfHx8MA%3D%3D);">
   <div class="container">
-    <h1>Unique castles</h1>
+    <h1>Unique castles from around the world</h1>
     <p>Book a stay in a castle here...</p>
     <!--<a class="btn btn-flat" href="#">Apply now</a>-->
   </div>
@@ -11,6 +11,7 @@
   <div class="cards">
     <% @castles.each do |castle| %>
     <div class="castle-card">
+      <%= cl_image_tag castle.photo.key, class: "castle-image" %>
       <h2><%= link_to castle.title, castle_path(castle) %></h2>
       <p><%= castle.description %></p>
       <p>Location: <%= castle.location %></p>

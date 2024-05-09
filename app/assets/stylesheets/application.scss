@@ -10,3 +10,28 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.castle-details {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.castle-details h1 {
+  color: #333;
+}
+
+.castle-details p {
+  color: #666;
+}
+
+.castle-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.field {
+  margin: 2px;
+  padding: 10px;
+}

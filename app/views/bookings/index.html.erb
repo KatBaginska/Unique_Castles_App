@@ -4,7 +4,7 @@
       <div class="col-md-4 mb-4">
         <div class="card shadow p-3 mb-5 bg-body rounded">
           <div class="card-body">
-            <img src="<%= booking.castle.image_url %>" class="card-img-top" alt="Castle Image">
+            <%= cl_image_tag booking.castle.photo.key, class: "castle-image" %>
             <h4 class="card-title text-#fd7e14 "><%= link_to booking.castle.title, booking_path(booking) %></h4>
             <p class="card-text"><strong>Start Date:</strong><%= booking.start_date %></p>
             <p class="card-text"><strong>End Date:</strong><%= booking.end_date %></p>

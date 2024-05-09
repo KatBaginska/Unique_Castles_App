@@ -1,23 +1,21 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhc3RsZXxlbnwwfHwwfHx8MA%3D%3D);">
+<div class="banner" style="background-image: url(./img/castle_banner2.png);">
   <div class="container">
-    <h1>Unique castles from around the world</h1>
-    <p>Book a stay in a castle here...</p>
     <!--<a class="btn btn-flat" href="#">Apply now</a>-->
   </div>
 </div>
 
-<div class="container mt-5">
-  <h1>Castles</h1>
+<div class="cards-castles">
+  <h1 class="castle-recomend">Recomended Castles</h1>
   <div class="cards">
     <% @castles.each do |castle| %>
     <div class="castle-card">
-      <%= cl_image_tag castle.photo.key, class: "castle-image" %>
+      <%= cl_image_tag castle.photos.first.key, class: "castle-image" %>
       <h2><%= link_to castle.title, castle_path(castle) %></h2>
-      <p><%= castle.description %></p>
-      <p>Location: <%= castle.location %></p>
+      <p><strong>Price:</strong> £<%= castle.price %></p>
+      <p><strong>Location:</strong> <%= castle.location %></p>
     </div>
     <% end %>
   </div>
   <br>
-  <%= link_to "Add new castle", new_castle_path, class: "btn btn-primary" %>
+  <%= link_to "Add new castle", new_castle_path, class: "elite" %>
 </div>

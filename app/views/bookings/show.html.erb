@@ -5,7 +5,7 @@
 
 
 <div class="card w-75">
- <img src="<%= @booking.castle.image_url %>" class="card-img-top" alt="Castle Image">
+ <%= cl_image_tag @castle.photo.key, class: "castle-image" %>
       <p><strong>Start Date:</strong><%= @booking.start_date %></p>
       <p><strong>End Date:</strong> <%= @booking.end_date %></p>
       <p><strong>User:</strong> <%= @booking.user.first_name %></p>

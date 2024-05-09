@@ -1,18 +1,25 @@
 
 <div class="container mt-5">
-<h1>New Booking</h1>
-<%= form_for @booking, url: castle_bookings_path(@castle) do |f| %>
-  <%= f.hidden_field :castle_id, value: @castle.id %>
+  <h1>New Booking</h1>
+  <%= simple_form_for @booking, url: castle_bookings_path(@castle) do |f| %>
+    <%= f.input :castle_id, as: :hidden, input_html: { value: @castle.id } %>
+    <div class="form-input">
+      <%= f.label :first_name %>
+      <p><%= current_user.first_name %></p>
+    </div>
 
-  <div class="field">
-    <%= f.label :start_date %>
-    <%= f.date_field :start_date %>
-  </div>
+    <div class="form-input">
+      <%= f.label :last_name %>
+      <p><%= current_user.last_name %></p>
+    </div>
 
-  <div class="field">
-    <%= f.label :end_date %>
-    <%= f.date_field :end_date %>
-  </div>
+    <div class="form-group">
+      <%= f.input :start_date, as: :string, label: "Start date", required: true, input_html:  { data: { controller: "datepicker" } }%>
+    </div>
+  
+   <div class="form-group">
+      <%= f.input :end_date, as: :string, label: "End date", required: true, input_html:  { data: { controller: "datepicker" } }%>
+    </div>
 
   <div class="actions">
     <%= f.submit "Create", class: "btn" %>

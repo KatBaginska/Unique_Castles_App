@@ -5,6 +5,10 @@ class CastlesController < ApplicationController
 
   def show
     @castle = Castle.find(params[:id])
+      @markers = [{
+        lat: @castle.latitude,
+        lng: @castle.longitude
+      }]
   end
 
   def my_castles

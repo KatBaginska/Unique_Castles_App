@@ -5,12 +5,10 @@ class CastlesController < ApplicationController
 
   def show
     @castle = Castle.find(params[:id])
-    if @castle.geocoded?
-      @marker = {
+      @markers = [{
         lat: @castle.latitude,
         lng: @castle.longitude
-      }
-    end
+      }]
   end
 
   def my_castles

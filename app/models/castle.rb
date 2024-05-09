@@ -4,4 +4,7 @@ class Castle < ApplicationRecord
 
   validates :title, :price, :location, presence: true
   validates :description, length: { minimum: 6 }
+
+  geocoded_by :location
+  after_validation :geocode
 end

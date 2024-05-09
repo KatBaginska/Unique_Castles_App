@@ -27,5 +27,12 @@
     <p>Hosted by <%= "#{@castle.user.username} - experienced host" %></p>
   </div>
   <%= link_to "Book this castle", new_castle_booking_path(@castle), class: "btn btn-primary" %>
+  <br>
+  <br>
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
 </div>

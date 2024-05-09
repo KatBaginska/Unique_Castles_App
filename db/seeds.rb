@@ -14,6 +14,7 @@ Booking.destroy_all
 Castle.destroy_all
 User.destroy_all
 
+
 puts "Creating users"
 kate = User.create(username: "Kate", email: "kate@gmail.com", first_name: "Kate", last_name: "Coates", password: "123456")
 john = User.create(username: "John", email: "john@gmail.com", first_name: "John", last_name: "Doe", password: "123456")
@@ -24,6 +25,7 @@ file_1 = URI.open("https://i0.wp.com/nc500experience.com/wp-content/uploads/2023
 file_2 = URI.open("https://photostorage.explorest.com/europe/uk/mkuhr-eilean-donan-drone-compressed.jpg")
 file_3 = URI.open("https://www.thecastlesofscotland.co.uk/s/cc_images/teaserbox_2480762761.jpg?t=1541514474")
 file_4 = URI.open("https://directionallychallengedtraveler.com/wp-content/uploads/2020/02/Eilean-Donan-1-1024x768.jpg")
+
 
 castle = Castle.new(title: "Eilean Donan Castle",
     description: "Feel like Robert the Bruce for a few days! Eilean Donan Castle is situated on an island at the point where three great sea lochs meet, and surrounded by some majestic scenery, you can survey the land like the warrior you are!",
@@ -77,6 +79,7 @@ castle.save
 file = URI.open("https://res.cloudinary.com/dfghvsvgn/image/upload/v1715183912/production/tpszhjf7fmbwvtocmf9bi1hlg70f.png")
 castle = Castle.new(title: "Castle Sizergh,",
     description: "Surrounded by beautiful gardens, featuring a limestone rock garden, pasture land, and woodlands which support a large butterfly population.",
+    price: 500,
     location: "Cumbria, England",
     price: 150,
     user: john)

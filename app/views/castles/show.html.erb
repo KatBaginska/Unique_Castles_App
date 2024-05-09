@@ -6,7 +6,7 @@
     <% if @castle.photo.attached? %>
       <%= cl_image_tag @castle.photo.key, height: 300, width: 400, crop: :fill %>
     <% else %>
-      <%= <p>No photo available</p> %>
+      <%= "No photo available" %>
      <% end %>
     <p><strong><%= @castle.title %></strong></p>
     <p><%= @castle.description %></p>

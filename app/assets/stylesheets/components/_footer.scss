@@ -17,10 +17,24 @@ main {
 
 .footer {
   padding: 20px;
-  background: rgb(61, 66, 90);
+  background: rgb(17, 6, 58);
   width: 100%;
+  display: flex;
+  // margin: 0px 0px;
+  justify-content: space-between;
+  align-items: center;
 }
 
+
+// .footer .container{
+//   width: 100%;
+// }
+
+.info {
+  text-align: right;
+}
+
+
 .footer .text {
-  color: white;
+  color: rgb(165, 165, 165);
 }

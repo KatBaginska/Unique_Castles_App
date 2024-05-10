@@ -1,14 +1,20 @@
-<div class="container">
-  <br>
-  <h1>My Castles</h1>
-   <div class="cards">
+
+
+ <div class="container mt-5">
+ <h1 class="">My castles</h1>
+  <div class="row">
     <% @castles.each do |castle| %>
-    <div class="castle-card">
-      <%= cl_image_tag castle.photos[0].key, height: 250, crop: :fill, class: "hero" %>
-      <h2><%= link_to castle.title, castle_path(castle) %></h2>
-      <p><%= castle.description %></p>
-      <p>Location: <%= castle.location %></p>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <%= cl_image_tag castle.photos[0].key, height: 250, crop: :fill, class: "hero" %>
+            <br>
+            <br>
+            <h2><%= castle.title %></h2>
+                  <p><%= castle.description %></p>
+                  <p>Location: <%= castle.location %></p>
+          </div>
+        </div>
     </div>
     <% end %>
-  </div>
 </div>

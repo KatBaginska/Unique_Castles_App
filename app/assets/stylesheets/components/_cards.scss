@@ -1,33 +1,44 @@
 .cards {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
   padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 15px;
 }
 
 .castle-card {
-  flex: 1;
-  margin-right: 16px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color:white;
+  flex-basis: calc(25% - 16px); /* Set flex-basis to 25% minus margin */
+  margin-bottom: 20px; /* Add margin-bottom for spacing between rows */
   color: rgb(111, 109, 109);
-  height: auto;
-  width: 300px;
+  // border-radius: 8px;
+  // box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  padding-bottom: 20px;
+  text-align: center;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange children in a column */
+  align-items: flex-start; /* Align children to the start (left) */
+  justify-content: center;
+}
+
+.castle-card h2{
   margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
-  padding: 20px;
 }
 
 .castle-card a {
   text-decoration: none;
+  color: black;
+}
+
+.castle-card p{
+
 }
 
 .castle-card img{
-  height: 200px;
+  width: 100%;
+  height: 360px;
+  box-shadow: 5px 5px 20px rgba(119, 112, 112, 0.3);
+}
+
+.castle-check{
+  text-decoration: underline;
 }

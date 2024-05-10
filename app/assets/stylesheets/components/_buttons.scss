@@ -1,18 +1,26 @@
 .btn {
   padding: 10px 20px;
   font-size: 1rem;
-  border-radius: 20px;
-  border: 1px solid $deep-blue;
+  border-radius: 0;
+  border: 2px solid $light-emerald-green;
   background-color: transparent;
-  color: $deep-blue;
+  color: $light-emerald-green;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: background-color 0.25s, color 0.25s;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+
+.btn-primary {
+  background-color: transparent;
+  color: $light-emerald-green;
+  border-color: $light-emerald-green;
 
   &:hover {
-    background-color: $deep-blue;
+    background-color: $deep-emerald-green;
     color: white;
+    border-color: $deep-emerald-green;
   }
 }

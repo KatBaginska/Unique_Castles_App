@@ -1,17 +1,19 @@
- <h1 class="">Bookings</h1>
+ <div class="container mt-5">
+ <h1 class="">Your bookings</h1>
   <div class="row">
     <% @bookings.each do |booking| %>
       <div class="col-md-4 mb-4">
-        <div class="card shadow p-3 mb-5 bg-body rounded">
+        <div class="card">
           <div class="card-body">
-            <%= cl_image_tag booking.castle.photo.key, class: "castle-image" %>
-            <h4 class="card-title text-#fd7e14 "><%= link_to booking.castle.title, booking_path(booking) %></h4>
-            <p class="card-text"><strong>Start Date:</strong><%= booking.start_date %></p>
-            <p class="card-text"><strong>End Date:</strong><%= booking.end_date %></p>
-            <p class="card-text"><strong>Dose host confrimed your booking?</strong><%= booking.confirmed %></p>
+            <%= cl_image_tag booking.castle.photos[0].key, height: 250, crop: :fill, class: "hero" %>
+            <h4 class="card-title text-#fd7e14 "><%= booking.castle.title %></h4>
+            <p class="card-text"><strong>Start Date: </strong><%= booking.start_date %></p>
+            <p class="card-text"><strong>End Date: </strong><%= booking.end_date %></p>
+            <p class="confirmation"><strong>BOOKING CONFIRMED</strong><%= booking.confirmed %></p>
           </div>
         </div>
     </div>
     <% end %>
   </div>
-  <%= link_to "Browse more castles", castles_path %>
+  <%= link_to "Browse castles", castles_path, class: "btn btn-primary" %>
+</div>

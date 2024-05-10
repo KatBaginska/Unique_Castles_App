@@ -8,7 +8,9 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Domine:wght@400..700&family=League+Spartan:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Satisfy&display=swap" rel="stylesheet">
@@ -18,11 +20,12 @@
     <div class="content">
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
+      <br>
       <main>
         <%= yield %>
       </main>
       <br>
-      <%= render "shared/footer" %>
     </div>
   </body>
+  <%= render "shared/footer" %>
 </html>

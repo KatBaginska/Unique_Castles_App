@@ -12,22 +12,26 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  padding-left: 30px;
+  padding-right: 15px;
 }
 
 .castle-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: white;
+  flex-basis: calc(25% - 16px); /* Set flex-basis to 25% minus margin */
+  margin-bottom: 20px; /* Add margin-bottom for spacing between rows */
   color: rgb(111, 109, 109);
-  height: auto;
-  width: 300px;
+  // border-radius: 8px;
+  // box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  padding-bottom: 20px;
+  text-align: center;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange children in a column */
+  align-items: flex-start; /* Align children to the start (left) */
+  justify-content: center;
+}
+
+.castle-card h2{
   margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
-  padding: 20px;
 }
 
 .add-castle-button {
@@ -60,4 +64,18 @@
   background-color: $secondary-gray;
   color: #333;
   border-color: $secondary-gray;
+}
+
+.castle-card p{
+
+}
+
+.castle-card img{
+  width: 100%;
+  height: 360px;
+  box-shadow: 5px 5px 20px rgba(119, 112, 112, 0.3);
+}
+
+.castle-check{
+  text-decoration: underline;
 }

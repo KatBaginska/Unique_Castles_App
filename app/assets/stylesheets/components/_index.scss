@@ -39,7 +39,7 @@
   font-size: 2rem;
   text-decoration: none;
   margin-top: 20px;
-  margin-left: 400px;
+  margin-left: 30px;
 }
 
 .elite:hover {
@@ -52,6 +52,17 @@
   margin-left: 30px;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  gap: 20px; /* Gap between cards */
+}
+
+.cards{
+  flex: 1;
+  margin-right: 16px;
+}
+
 .cards-castle{
   margin-left:30px;
   margin-right: 30px;
@@ -59,6 +70,8 @@
   flex-direction: column;
   align-items: center;
 }
+
+// Show page for the castle desing
 
 .image-container {
   display: flex;
@@ -114,3 +127,21 @@
   display: flex;
   justify-content: space-between;
 }
+ // bookings index page styling
+
+ .card-body h4 {
+  padding-top: 16px;
+ }
+
+ .card-body .card-text {
+  margin: 0;
+ }
+
+ .card-body .confirmation {
+  margin: 0;
+  padding-top: 24px;
+ }
+
+ .card-body .hero {
+  padding: 0;
+ }

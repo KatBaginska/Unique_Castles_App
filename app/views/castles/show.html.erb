@@ -1,7 +1,10 @@
 <div class="container mt-5">
+<div class="title-container">
   <h1><%= @castle.title %></h1>
-
-<%= link_to "Back to castles", castles_path %>
+  <div class="back-to-container">
+<%= link_to "Back to castles", castles_path, class: "btn btn-primary" %>
+</div>
+</div>
   <div class="castle-details-card">
     <% if @castle.photos.present? %>
       <div class="image-container">
@@ -20,15 +23,20 @@
     <% end %>
         </div>
      </div>
-     <div class="details">
-    <p><%= @castle.description %></p>
-    <p>Price: <%= "£#{(@castle.price)}/per night" %></p>
-    <p>Location: <%= @castle.location %></p>
-    <p>Hosted by <%= "#{@castle.user.username} - experienced host" %></p>
+  <div class="details-container">
+    <div class="details">
+      <p><%= @castle.description %></p>
+      <br>
+      <p>Hosted by <%= "#{@castle.user.username} - experienced host" %></p>
+      <hr>
+      <p>Price: <%= "£#{(@castle.price)}/per night" %></p>
+      <hr>
+    </div>
+    <div class="button-container">
+      <%= link_to "Book this castle", new_castle_booking_path(@castle), class: "btn btn-primary" %>
+    </div>
   </div>
-  <%= link_to "Book this castle", new_castle_booking_path(@castle), class: "btn btn-primary" %>
-  <br>
-  <br>
+  <p>Location: <%= @castle.location %></p>
   <div style="width: 100%; height: 600px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"

@@ -5,7 +5,7 @@
 </div>
 
 <div class="cards-castles">
-  <h1 class="castle-recomend">Recommended Castles</h1>
+  <h1 class="castle-recomend">Find Your Castle</h1>
   <div class="cards">
     <% @castles.each do |castle| %>
     <div class="castle-card">
@@ -13,6 +13,7 @@
       <h2><%= link_to castle.title, castle_path(castle) %></h2>
       <p><strong>Price:</strong> £<%= castle.price %></p>
       <p><strong>Location:</strong> <%= castle.location %></p>
+      <p class="castle-check"><%= link_to "Check this castle", castle_path(castle) %></p>
     </div>
     <% end %>
   </div>

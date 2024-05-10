@@ -75,9 +75,10 @@
 }
 
 .details {
-  margin-top: 50px;
+  margin-top: 16px;
   width: 60%;
   text-align: justify;
+  flex-grow: 0;
 }
 
 .main-image {
@@ -88,4 +89,28 @@
 .hero {
   width: 100%;
   padding-right: 8px;
+}
+
+.details-container {
+  display: flex;
+}
+
+.details-container p {
+  margin: 0;
+}
+
+.button-container {
+  margin-top: 16px;
+  margin-left: 16px;
+  flex-grow: 1;
+}
+
+.button-container a {
+  display: block;
+  margin: auto;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
 }

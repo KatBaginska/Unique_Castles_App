@@ -30,8 +30,8 @@ file_4 = URI.open("https://directionallychallengedtraveler.com/wp-content/upload
 castle = Castle.new(title: "Eilean Donan Castle",
     description: "Feel like Robert the Bruce for a few days! Eilean Donan Castle is situated on an island at the point where three great sea lochs meet, and surrounded by some majestic scenery, you can survey the land like the warrior you are!
     The rooms are painstakingly restored following the medieval theme, truely a fairytale experience. The castle can accommodate large family or friends looking for a retreat away from it all. ",
-    price: 550,
-    location: "Dornie, Kyle of Lochalsh, Scotland",
+    price: 1000,
+    location: "Dornie, Scotland",
     user: kate)
 castle.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 castle.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
@@ -49,8 +49,8 @@ file_4 = URI.open("https://www.travelandleisure.com/thmb/QtJWjakkqPMimxOCuXBw0Yi
 castle = Castle.new(title: "Neuschwanstein Castle",
     description: "Live out your fairytale! Neuschwanstein is a 19th-century historicist palace on a rugged hill of the foothills of the Alps in the very south of Germany, near the border with Austria. A welcoming and luxurious castle with outbuildings for hosting very large families and groups of friends. Dedicated spaces, large meals, many amenities for a variety of activities.
     Fully private property for its guests - Premium Jacuzzi - Gym - Home Massage Service - (optional services for a wellness stay. Contact us:))",
-    price: 600,
-    location: "Foothills of the Alps, Southern Germany",
+    price: 1500,
+    location: "Schwangau, Germany",
     user: kate)
 castle.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 castle.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
@@ -67,8 +67,8 @@ file_4 = URI.open("https://www.amberleycastle.co.uk/uploads/RoomImage/p1aqcfd9pr
 castle = Castle.new(title: "Amberley Castle",
     description: "Amberley Castle is a unique luxury place to stay located in the picturesque village of Amberley at the foot of the South Downs. This magnificent 900-year-old castle is enclosed by a 60 foot high curtain wall and portcullis that remains open, behind which you will discover an enchanting world offering the highest standards of comfort. The bedrooms are resplendent with  luxurious facilities fit for a king or queen!
     History encompasses every part of this wonderful building and the many acres of gardens it stands in. Enjoy discovering our tennis courts, 18-hole putting green and croquet lawn, and even our resident peacock roaming the grounds. For those seeking tranquillity and relaxation, there are many quiet corners to discover under the shade of a tree or by the fireside..",
-    price: 600,
-    location: "East Sussex, England",
+    price: 1200,
+    location: "Amberley, England",
     user: john)
 castle.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 castle.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
@@ -84,8 +84,8 @@ file_3= URI.open("https://www.grottapalazzese.it/wp-content/uploads/2018/03/Grot
 file_4 = URI.open("https://www.grottapalazzese.it/wp-content/uploads/2020/06/Grotta-Palazzese-1900x1260.jpg")
 castle = Castle.new(title: "Grotta Palazzese",
     description: "The castle by the sea! A magical and enchanted place, with a restaurant and terrace on the lower floor created inside a natural cave. The Grotta Palazzese restaurant takes its name from the cave and from the place that was once also called 'Grotta di Palazzo'. It is an exclusive and atmospheric place, and has been used for parties and banquets since 1700. The blue of the sea and the sky contrasts with the mysterious atmosphere of the natural rocks. The colours of the day make the beauty of the coastal landscape shine, while those of the evening, at sunset, create unforgettable charm with the elegance of the restaurant lights.",
-    price: 650,
-    location: "Puglia, Italy",
+    price: 1250,
+    location: "Bari, Italy",
     user: john)
 castle.photos.attach(io: file, filename: "image.png", content_type: "image/png")
 castle.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
@@ -103,7 +103,7 @@ castle = Castle.new(title: "Castle Sizergh",
     description: "Reign in style in this majestic 14th-century castle in stunning Cumbrian countryside.
     Steeped in history, Castle Sizergh has been restored with loving attention to detail and is in a stunning location. Surrounded by beautiful gardens, featuring a limestone rock garden, pasture land, and woodlands which support a large butterfly population.
     The Castle is perfect for large gatherings but equally it has intimate hidden corners where guests can enjoy a quiet moment with a abundant views over the countryside.",
-    price: 400,
+    price: 1000,
     location: "Cumbria, England",
     user: john)
 castle.photos.attach(io: file, filename: "image.png", content_type: "image/png")

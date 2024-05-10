@@ -1,10 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(17, 6, 58);
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.nav-link{
+  color: white,
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -14,16 +18,15 @@
 .navbar .logo{
   width: 60px !important;
   height: auto;
- 
 }
 
-.navbar .nav-item .nav-link{
+.navbar{
   font-family: "League Spartan", sans-serif;
   font-optical-sizing: auto;
   font-weight: bold 700;
   font-style: bold;
   font-size: 25px;
-  margin-right: 20px;
+  margin-right: 0px;
 
 }
 

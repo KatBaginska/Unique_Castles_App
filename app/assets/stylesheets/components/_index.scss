@@ -49,18 +49,13 @@
 }
 
 .castle-recomend{
-  margin-left: 30px;
+  font-size: 40px;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
   gap: 20px; /* Gap between cards */
-}
-
-.cards{
-  flex: 1;
-  margin-right: 16px;
 }
 
 .cards-castle{

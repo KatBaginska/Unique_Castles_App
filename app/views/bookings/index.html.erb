@@ -1,4 +1,4 @@
- <div class="container mt-5">
+<div class="container mt-5">
  <h1 class="">Your bookings</h1>
   <div class="row">
     <% @bookings.each do |booking| %>
@@ -9,6 +9,10 @@
             <h4 class="card-title text-#fd7e14 "><%= booking.castle.title %></h4>
             <p class="card-text"><strong>Start Date: </strong><%= booking.start_date %></p>
             <p class="card-text"><strong>End Date: </strong><%= booking.end_date %></p>
+            <% total_nights = (booking.end_date - booking.start_date).to_i %>
+            <% total_price = total_nights * booking.castle.price %>
+            <p class="card-text"><strong>Total Nights: </strong><%= total_nights %></p>
+            <p class="card-text"><strong>Total Price: </strong><%= total_price %></p>
             <p class="confirmation"><strong>BOOKING CONFIRMED</strong><%= booking.confirmed %></p>
           </div>
         </div>

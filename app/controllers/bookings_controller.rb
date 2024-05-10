@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   def index
-    @bookings = current_user.bookings.all
+    @bookings = current_user.bookings
     if (@bookings.empty?)
       @message = "No actual bookings"
     end
@@ -10,8 +10,6 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @castle = @booking.castle
-    @booking.total_nights = (@booking.end_date - @booking.start_date).to_i
-    @booking.total_price = @booking.total_nights * @castle.price
   end
 
   def new
